@@ -30,6 +30,10 @@ public class Player {
 		return playerInfo.toString();
 	}
 	
+	public Card flip () {
+		return hand.remove(0);
+	}
+	
 	public void draw (List<Card> deck) {
 		hand.add(deck.remove(0));
 	}
@@ -38,4 +42,11 @@ public class Player {
 		score++;
 	}
 	
+	public int getScore () {
+		return score;
+	}
+
+	public String getName() {
+		return name;
+	}
 }

@@ -13,15 +13,33 @@ public class App {
 		
 		List<Card> liveDeck = deck.shuffle();
 		
-		for(int i = 1; i <= liveDeck.size(); i++) {
-			if (i % 2 == 0) {
+		for(int i = 1; i <= 52; i++) {
+			if(i % 2 == 0) {
 				player2.draw(liveDeck);
 			} else {
 				player1.draw(liveDeck);
 			}
 		}
-		//Using a traditional for loop, iterate 26 times and call the flip method for each player.
-			//Compare the value of each card returned by the two player’s flip methods. Call the incrementScore method on the player whose card has the higher value.
+		
+		for(int i = 1; i < 27; i++) {
+			Card card1 = player1.flip();
+			Card card2 = player2.flip();
+			if(card1.getValue() > card2.getValue()) {
+				player1.incrementScore();
+			} else {
+				player2.incrementScore();
+			}
+		}
+		
+		System.out.println(player1.getName() + " " + player1.getScore());
+		System.out.println(player2.getName() + " " + player2.getScore());
+		
+		if (player1.getScore() == player2.getScore()) {
+			System.out.println("Draw!");
+		} else if (player1.getScore() > player2.getScore()) {
+			System.out.println(player1.getName() + " Wins!");
+		} else {
+			System.out.println(player2.getName() + " Wins!");
+		}
 	}
-
 }

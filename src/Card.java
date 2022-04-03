@@ -5,12 +5,10 @@ public class Card {
 	private int value;
 	private String suit;
 	
-	//constructor
 	public Card(int value, String suit) {
 		this.value = value;
 		this.suit = suit;
 	}
-	//description / toString method
 	public String toString() {
 		return "The " + value + " of " + suit;
 	}
@@ -26,14 +24,4 @@ public class Card {
 	public void setName(String suit) {
 		this.suit = suit;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
